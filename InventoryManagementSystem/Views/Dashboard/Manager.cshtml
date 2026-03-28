@@ -1,0 +1,15 @@
+﻿@{
+
+        ;
+}
+
+<h1>Manager Dashboard</h1>
+<h4>Welcome, @ViewBag.UserName!</h4>
+
+<div class="flex-column m-3 p-2">
+    <button class="btn btn-primary" onclick="location.href= '@Url.Action("ProductList", "Dashboard")'" accesskey="">Manage inventory</button>
+    <button class="btn btn-secondary" onclick="" accesskey="">All stock request</button>
+    <button class="btn btn-success" onclick="" accesskey="">Approve stock request</button>
+    <button class="btn btn-danger" onclick="" accesskey="">Low on stocks</button>
+</div>
+<a asp-controller="Dashboard" asp-action="Logout">Logout</a>

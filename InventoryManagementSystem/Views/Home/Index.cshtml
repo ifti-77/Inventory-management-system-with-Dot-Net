@@ -1,8 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
+    string email = "";
+    string password = "";
+
+    if(Model != null)
+    {
+        email = Model.email;
+        password = Model.password;
+    }
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<form action="" method="post">
+    Email: <input type="text" name="email" value="@email" /> <br />
+    <span style="color:red">@Html.ValidationMessage("email")</span><br />
+    Password: <input type="password" name="password" value="@password"/><br/>
+    <span style="color:red">@Html.ValidationMessage("password")</span><br />
+    <input type="submit" value="Login" />
+</form>
+

@@ -1,5 +1,10 @@
+using InventoryManagementSystem.EF;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<InventoryManagementContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DbContext")));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
